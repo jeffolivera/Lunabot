@@ -1,0 +1,21 @@
+o que o bot Luna irá fazer:
+
+Auxiliar o usuário a executar uma compra na loja de jogos podendo, adicionar, excluir, listar os itens dentro do carrinho.
+Referente ao item que o usuário escolher, o item terá um nome, descrição, quantidade, disponibilidade, valor e plataforma 
+que o jogo se enquadra.
+
+Features:
+
+- Chatbot de conversação no Dialogflow
+- API de conecção com o dialogflow e API da Loja
+- API com os produtos da loja (imagem do jogo e dos consoles)
+
+Chatbot de conversação:
+
+- Nome (Luna)
+- Fluxos de conversa (adicionar item no carrinho, excluir item do carrinho, exibir o carrinho)
+
+Banco de dados:
+
+- Tabela de usuários
+- Produtos da loja
