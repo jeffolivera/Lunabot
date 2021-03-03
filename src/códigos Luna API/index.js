@@ -23,6 +23,11 @@ app.post('/webhook', (request, response) => {
     var saberListaDeJogosXBOX = data.queryResult.parameters.jogosXBOX;
     plataformaJogos.getListaJogosXbox(saberListaDeJogosXBOX, response);
 
+    //variável onde o usuário digita comprar jogos de xbox
+    var comprarJogoXBOX = data.queryResult.parameters.compraDeJogosXbox;
+    plataformaJogos.getComprarJogosXbox(comprarJogoXBOX,response);
+
+
     //variável onde o usuário digita jogos de ps4
     var saberListaDeJogosPS4 = data.queryResult.parameters.jogosPS4;
     plataformaJogos.getListaJogosPs4(saberListaDeJogosPS4,response);
@@ -30,6 +35,8 @@ app.post('/webhook', (request, response) => {
     //variável onde o usuário digita jogos de pc
     var saberListaDeJogosPC = data.queryResult.parameters.jogosPC;
     plataformaJogos.getListaJogosPc(saberListaDeJogosPC, response);
+
+
 
 })
 
