@@ -19,24 +19,38 @@ app.post('/webhook', (request, response) => {
     var intentName = data.queryResult.intent.displayName;
     console.log(intentName);
 
-    //variável onde o usuário digita jogos de x box
+    // saberListaDeJogosXBOX: variável onde armazena o parâmetro digitado pelo usuário (lista de jogos xbox)
     var saberListaDeJogosXBOX = data.queryResult.parameters.jogosXBOX;
-    plataformaJogos.getListaJogosXbox(saberListaDeJogosXBOX, response);
-
-    //variável onde o usuário digita comprar jogos de xbox
-    var comprarJogoXBOX = data.queryResult.parameters.compraDeJogosXbox;
-    plataformaJogos.getComprarJogosXbox(comprarJogoXBOX,response);
-
-
-    //variável onde o usuário digita jogos de ps4
-    var saberListaDeJogosPS4 = data.queryResult.parameters.jogosPS4;
-    plataformaJogos.getListaJogosPs4(saberListaDeJogosPS4,response);
     
-    //variável onde o usuário digita jogos de pc
+    if(intentName == 'intent-lista-jogos-xbox'){
+
+        plataformaJogos.getListaJogosXbox(saberListaDeJogosXBOX, response);
+    }
+
+    // comprarJogosBOX: variável onde armazena o parâmetro digitado pelo usuário (comprar jogo tal da lista de jogos do xbox)
+    var comprarJogoXBOX = data.queryResult.parameters.compraDeJogosXbox;
+
+    if(intentName == 'intent-comprar-jogo-xbox'){
+    
+        plataformaJogos.getComprarJogosXbox(comprarJogoXBOX, response);
+
+    }
+
+    //saberListaDeJogosPS4: variável onde armazena o parâmetro digitado pelo usuário (lista de jogos ps4)
+    var saberListaDeJogosPS4 = data.queryResult.parameters.jogosPS4;
+
+    if(intentName == 'intent-lista-jogos-ps4'){
+
+        plataformaJogos.getListaJogosPs4(saberListaDeJogosPS4, response);
+    }
+    
+    //saberListaDeJogosPC: variável onde armazena o parâmetro digitado pelo usuário (lista de jogos pc)
     var saberListaDeJogosPC = data.queryResult.parameters.jogosPC;
-    plataformaJogos.getListaJogosPc(saberListaDeJogosPC, response);
 
-
+    if(intentName == 'intent-lista-jogos-pc'){
+    
+        plataformaJogos.getListaJogosPc(saberListaDeJogosPC, response);
+    }
 
 })
 

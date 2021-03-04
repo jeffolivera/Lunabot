@@ -30,7 +30,7 @@ export default class PlataformaJogos{
 
       })
     }
-
+    
     getComprarJogosXbox(comprarJogoXBOX, responseDialogflow){
         axios.get("https://games-center-api.herokuapp.com/jogos/xbox").then((response) =>{
           
